@@ -1,0 +1,39 @@
+# Copyright (c) 2017 Shotgun Software Inc.
+#
+# CONFIDENTIAL AND PROPRIETARY
+#
+# This work is provided "AS IS" and subject to the Shotgun Pipeline Toolkit
+# Source Code License included in this distribution package. See LICENSE.
+# By accessing, using, copying or modifying this work you indicate your
+# agreement to the Shotgun Pipeline Toolkit Source Code License. All rights
+# not expressly granted therein are reserved by Shotgun Software Inc.
+#
+
+# All the bundles are relative to this repo, except for tk-shell, as there
+# is little chance it will need to be edited. All other repos are common
+# on dev machines.
+################################################################################
+
+includes:
+- ./includes/frameworks.yml
+
+engines:
+  tk-shell:
+    location:
+      type: path
+      path: $SHOTGUN_EXTERNAL_REPOS_ROOT/tk-shell
+    apps:
+      tk-multi-workfiles2:
+        template_publish: asset_publish
+        template_publish_area: asset_publish_area
+        template_work: asset_work
+        legacy_template_work: asset_work_legacy
+        template_work_area: asset_work_area
+        location:
+          type: path
+          path: $REPO_ROOT
+
+################################################################################
+# reference all of the common frameworks
+
+frameworks: "@frameworks"

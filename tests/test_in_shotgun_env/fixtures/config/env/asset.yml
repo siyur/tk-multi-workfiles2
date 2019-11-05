@@ -1,0 +1,35 @@
+
+description: Apps and engines loaded when an Asset is loaded. Since std VFX
+  config template has a file system structure which is centered around pipeline
+  steps, this environment is largely empty. Most of the work takes place on a
+  level in the file system where both an asset and a pipeline step is available
+  - e.g Asset Hero, modeling, so all apps for loading, publishing etc. are
+  located in the asset_step environment. This environment mostly contains
+  utility apps and the tank work files app, which lets you choose a task to work
+  on and load associated content into an application.
+
+################################################################################
+
+includes:
+- ./includes/frameworks.yml
+
+engines:
+  tk-shell:
+    location:
+      type: path
+      path: $SHOTGUN_EXTERNAL_REPOS_ROOT/tk-shell
+    apps:
+      tk-multi-workfiles2:
+        template_publish: asset_publish
+        template_publish_area: asset_publish_area
+        template_work: asset_work
+        legacy_template_work: asset_work_legacy
+        template_work_area: asset_work_area
+        location:
+          type: path
+          path: $REPO_ROOT
+
+################################################################################
+# reference all of the common frameworks
+
+frameworks: "@frameworks"

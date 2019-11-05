@@ -1,0 +1,16 @@
+
+# The name to use for the primary storage
+# It has to be named as "unit_tests" as it is defined in the setUp() of TankTestBase class in tank_test_base.py
+unit_tests:
+
+    description: A top-level root folder for production data. Project folders
+        will be created beneath this location.
+
+    # these paths will be populated by the associated local storage in Shotgun
+    # at setup time.
+    mac_path:
+    linux_path:
+    windows_path: c:\temp\sg_tests\
+
+    # indicates that this is the default storage root
+    default: true

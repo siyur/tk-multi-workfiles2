@@ -1,0 +1,11 @@
+# Copyright (c) Magnopus
+
+# the type of dynamic content
+type: "user_workspace"
+
+# the shotgun field to use for the folder name
+name: "login"
+
+# create this folder when any application launches, but not when normal folder
+# creation runs
+defer_creation: true
