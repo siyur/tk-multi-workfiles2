@@ -1,7 +1,9 @@
 """
 To execute the functional tests,
-the python interpreter should set to the location of Python in Shotgun
-the tk-core repository should locate at the same level of tk-multi-workfiles2
+    - the python interpreter should set to the location of Python in Shotgun
+    - the following projects:
+      tk-core, tk-framework-shotgunutils, tk-framework-qtwidgets, tk-shell
+      must live at the location: <workfile_repository_root>/../../shotgunsoftware/
 
 """
 
