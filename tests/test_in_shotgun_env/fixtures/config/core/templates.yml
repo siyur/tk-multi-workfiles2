@@ -29,10 +29,6 @@ keys:
         type: int
         format_spec: "03"
 
-    minor_version:
-        type: int
-        format_spec: "03"
-
     version_four:
        type: int
        format_spec: "04"
@@ -194,28 +190,19 @@ paths:
     #
     # These don't require the standard formatting (with definition and root_name) because they
     # will be set within each template that uses the alias.
-    # todo: look at the descriptor class in core
+
     asset_root: 3D/{sg_asset_type}/{Asset}/{step.name}
-    # asset_root: 3D/context
 
     asset_publish:
         definition: '@asset_root/publish/v{version}/source/{Asset}_{step.short_name}.v{version}.{maya_extension}'
-#        root_name: 'primary'
 
     asset_publish_area:
         definition: '@asset_root/publish'
-#        root_name: 'primary'
 
     asset_work:
-        definition: '@asset_root/work/{username}/maya/{Asset}_{step.short_name}.v{version}.m{minor_version}.{maya_extension}'
-#        root_name: 'primary'
-
-    asset_work_legacy:
         definition: '@asset_root/work/{username}/maya/{Asset}_{step.short_name}.v{version}.{maya_extension}'
-#        root_name: 'primary'
 
     asset_work_area:
         definition: '@asset_root/work/{username}/maya'
-#        root_name: 'primary'
 
 
